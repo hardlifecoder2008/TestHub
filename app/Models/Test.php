@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\HighLevel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Test extends Model
 {
@@ -18,4 +19,9 @@ class Test extends Model
         'max_ball',
         'high_level_id'
     ];
+
+    public function levels()
+    {
+        return $this->belongsToMany(HighLevel::class);
+    }
 }

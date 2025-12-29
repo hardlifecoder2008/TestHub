@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('high_levels', function (Blueprint $table) {
             $table->id();
+            $table->enum('name',['easy','medium','high']);
+            $table->integer('total_question');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->integer('ball');
             $table->timestamps();
         });
     }

@@ -2,11 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Test;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class HighLevel extends Model
 {
     /** @use HasFactory<\Database\Factories\HighLevelFactory> */
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'total_question',
+        'category_id',
+        'ball'
+    ];
+
+    public function test()
+    {
+        return $this->hasOne(Test::class);
+    }
 }
