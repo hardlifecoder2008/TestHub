@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Question;
 use App\Models\HighLevel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,4 +25,10 @@ class Test extends Model
     {
         return $this->belongsToMany(HighLevel::class);
     }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
 }
