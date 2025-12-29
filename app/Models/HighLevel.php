@@ -21,4 +21,9 @@ class HighLevel extends Model
     {
         return $this->hasOne(Test::class);
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }
