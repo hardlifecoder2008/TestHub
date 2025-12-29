@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
+            $table->enum('method',['public','private']);
+            $table->text('test_title');
+            $table->foreignId('owner_id')->constrained('users')->cascadeOnDelete();
+            $table->integer('code');
+            $table->dateTime('tile_limit');
+            $table->integer('max_ball');
+
             $table->timestamps();
         });
     }
