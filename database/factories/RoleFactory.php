@@ -16,8 +16,9 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
+        $role = ['teacher','student'];
         return [
-            //
+            'name' => $role[rand(0,1)]
         ];
     }
 }
