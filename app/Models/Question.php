@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Role;
 use App\Models\Test;
+use App\Models\ResultTest;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
@@ -24,6 +25,9 @@ class Question extends Model
     {
         return $this->belongsTo(Role::class);
     }
-    
+    public function resultTest()    
+    {
+        return $this->hasOne(ResultTest::class);
+    }
 
 }

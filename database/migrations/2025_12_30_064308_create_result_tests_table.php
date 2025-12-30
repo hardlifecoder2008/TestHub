@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('result_tests', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('question_id')->constrained()->cascadeOnDelete();
+            $table->json('selected_answer');
+            $table->boolean('is_correct');
+            $table->integer('amount_ball');
             $table->timestamps();
         });
     }
