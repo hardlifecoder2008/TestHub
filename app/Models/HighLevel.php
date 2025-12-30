@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Test;
+use App\Models\Answer;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -25,5 +26,10 @@ class HighLevel extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function answer()
+    {
+        return $this->hasMany(Answer::class);
     }
 }

@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('answers', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('high_level_id')->constrained('high_levels','id')->cascadeOnDelete();
+            $table->integer('level_ball');
+            $table->text('correct_answer');
             $table->timestamps();
         });
     }
