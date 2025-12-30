@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('code');
             $table->dateTime('tile_limit');
             $table->integer('max_ball');
-            $table->foreignId('high_level')->constrained("high_levels",'id')->cascadeOnDelete();
+            $table->foreignId('high_level_id')->constrained("high_levels",'id')->cascadeOnDelete();
             
             $table->timestamps();
         });
